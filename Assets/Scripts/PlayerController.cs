@@ -41,7 +41,8 @@ public class PlayerController : MonoBehaviour
 			if (Physics.Raycast (ray, out hit)) {
 				newPosition = hit.point; // set new/target position as mouse click point
 				Vector3 towards = newPosition - transform.position; // find the vector to take
-				transform.rotation = Quaternion.LookRotation (towards); //perform rotation towards click point
+				Debug.Log(towards);
+				transform.rotation = Quaternion.LookRotation (towards, Vector3.right); //perform rotation towards click point
 
 				// get to target in timeToTarget seconds
 				towards /= timeToTarget;
