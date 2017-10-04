@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
 	Vector3 newPosition;
 
+	public GameObject obstacle;
+
 	// Use this for initialization
 	// called on the first frame when the script is active
 	void Start ()
@@ -52,6 +54,16 @@ public class PlayerController : MonoBehaviour
 
 				//set velocity vector of rigid body
 				rb.velocity = towards;
+			}
+		}
+
+
+		// create obstacle on right click
+		if (Input.GetMouseButtonDown (1)) {
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition); //point camera in direction of mouse
+			if (Physics.Raycast (ray, out hit)) {
+				GameObject obj = Instantiate (obstacle, new Vector3 (hit.point.x, hit.point.y, hit.point.z), Quaternion.identity) as GameObject;
 			}
 		}
 

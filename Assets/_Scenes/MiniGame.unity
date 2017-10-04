@@ -319,10 +319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  rb: {fileID: 0}
-  target: {fileID: 0}
   satisfactionRadius: 0.1
   timeToTarget: 0.25
+  obstacle: {fileID: 1591756438}
 --- !u!54 &433013879
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -436,11 +435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 433013877}
-  speed: 0
-  rb: {fileID: 0}
-  target: {fileID: 0}
-  satisfactionRadius: 0.1
-  timeToTarget: 0.25
 --- !u!4 &809612932
 Transform:
   m_ObjectHideFlags: 0
