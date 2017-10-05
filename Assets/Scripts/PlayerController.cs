@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 			if (Physics.Raycast (ray, out hit)) {
 				newPosition = hit.point; // set new/target position as mouse click point
 				Vector3 towards = newPosition - transform.position; // find the vector to take
-				Debug.Log(towards);
+				//Debug.Log(newPosition);
 				transform.rotation = Quaternion.LookRotation (towards, Vector3.right); //perform rotation towards click point
 
 				// get to target in timeToTarget seconds
@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition); //point camera in direction of mouse
 			if (Physics.Raycast (ray, out hit)) {
 				GameObject obj = Instantiate (obstacle, new Vector3 (hit.point.x, hit.point.y, hit.point.z), Quaternion.identity) as GameObject;
+				obj.transform.position = new Vector3 (obj.transform.position.x, 0.5f, obj.transform.position.z);
 			}
 		}
 

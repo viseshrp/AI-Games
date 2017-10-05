@@ -26,9 +26,13 @@ public class SecondaryPlayerController : MonoBehaviour {
 	// Update Not appropriate or perfect for this purpose, so we switch to late update.
 	// Guaranteed to run after all items have been processed in Update(), i.e player has completely moved.
 	void LateUpdate () {
-		// make sure any movement in player is followed by movement in camera and offset/gap is maintained
-		// A.K.A Follow camera
 		transform.position = player.transform.position + offset;
+
+		// TODO: NEED TO DO SOME MATH TO GET INITIAL RELATIVE POSITIONS OF OFFSETTED BALLS
+		// CALCULATE A NEW DIRECTION/POSITION OF OFFSET AND APPLY IT ON BALLs.
+		// GET LIST OF ALL BALLS USING THIS SCRIPT before that.
+
+
 	}
 
 }
